@@ -1,0 +1,51 @@
+{
+  "body": {
+    "type": "object",
+    "required": [
+      "fromType",
+      "fromId",
+      "toType",
+      "toId",
+      "equipmentType",
+      "whitelistedProviders",
+      "departureDateStart",
+      "departureDateEnd"
+    ],
+    "properties": {
+      "fromType": {
+        "type": "string"
+      },
+      "fromId": {
+        "type": "string"
+      },
+      "toType": {
+        "type": "string"
+      },
+      "toId": {
+        "type": "string"
+      },
+      "equipmentType": {
+        "type": "string"
+      },
+      "whitelistedProviders": {
+        "type": "array"
+      },
+      "departureDateStart": {
+        "type": "string"
+      },
+      "departureDateEnd": {
+        "type": "string"
+      }
+    }
+  },
+  "response": {
+    "200": {
+      "type": "object",
+      "properties": {
+        "rid": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

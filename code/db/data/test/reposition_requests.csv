@@ -1,0 +1,11 @@
+demand,from_type,from,to_type,to,equipment_type,depot_location,whitelisted_providers,departure_date_start,departure_date_end,expiration_date,deleted_on
+Seaco,terminal,Bukai,terminal,SSA T-30,twenty,,"Maersk,CMA-CGM,PIL,Hapaq-Lloyd,MSC",2019-06-28,2019-07-09,2019-07-10,
+Seaco,terminal,Bukai,terminal,Pacific Container Terminal,twenty,,"Maersk,CMA-CGM,PIL,Hapaq-Lloyd,MSC",2019-06-28,2019-07-09,2019-07-10,
+Seaco,terminal,Bukai,terminal,Pacific Container Terminal,twenty,,"Maersk,CMA-CGM,PIL,Hapaq-Lloyd,MSC",2019-06-13,2019-06-18,2019-06-19,
+Seaco,terminal,Bukai,terminal,Pacific Container Terminal,twenty,,"Maersk,CMA-CGM,PIL,Hapaq-Lloyd,MSC",2019-06-20,2019-06-28,2019-06-29,
+Seaco,terminal,Bukai,terminal,Pacific Container Terminal,twenty,,"Maersk,CMA-CGM,PIL,Hapaq-Lloyd,MSC",2019-06-20,2019-07-11,2019-07-12,
+Seaco,terminal,Bukai,terminal,Pacific Container Terminal,twenty,,"Maersk,CMA-CGM,PIL,Hapaq-Lloyd,MSC",2019-06-25,2019-07-03,2019-07-04,
+Seaco,terminal,Bukai,terminal,Pacific Container Terminal,twenty,,"Maersk,CMA-CGM,PIL,Hapaq-Lloyd,MSC",2019-07-03,2019-07-05,2019-07-06,
+Seaco,terminal,Bukai,terminal,Pacific Container Terminal,twenty,,"Maersk,CMA-CGM,PIL,Hapaq-Lloyd,MSC",2019-07-05,2019-07-11,2019-07-12,
+Seaco,terminal,Bukai,terminal,Pacific Container Terminal,twenty,,"Maersk,CMA-CGM,PIL,Hapaq-Lloyd,MSC",2019-07-09,2019-07-13,2019-07-14,
+Seaco,terminal,Bukai,terminal,Pacific Container Terminal,twenty,,"Maersk,CMA-CGM,PIL,Hapaq-Lloyd,MSC",2019-07-15,2019-07-20,2019-07-21,

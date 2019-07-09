@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile.api
+  ui:
+    build: 
+      context: .
+      dockerfile: Dockerfile.ui

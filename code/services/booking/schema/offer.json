@@ -1,0 +1,59 @@
+{
+  "body": {
+    "type": "object",
+    "required": [
+      "terminalFrom",
+      "terminalTo",
+      "priceUnit",
+      "quantityTwentyOriginal",
+      "quantityFortyOriginal",
+      "whitelistedClients",
+      "departureDateStart",
+      "departureDateEnd",
+      "arrivalDateStart",
+      "arrivalDateEnd"
+    ],
+    "properties": {
+      "terminalFrom": {
+        "type": "string"
+      },
+      "terminalTo": {
+        "type": "string"
+      },
+      "priceUnit": {
+        "type": "number"
+      },
+      "quantityTwentyOriginal": {
+        "type": "number"
+      },
+      "quantityFortyOriginal": {
+        "type": "number"
+      },
+      "whitelistedClients": {
+        "type": "array"
+      },
+      "departureDateStart": {
+        "type": "string"
+      },
+      "departureDateEnd": {
+        "type": "string"
+      },
+      "arrivalDateStart": {
+        "type": "string"
+      },
+      "arrivalDateEnd": {
+        "type": "string"
+      }
+    }
+  },
+  "response": {
+    "200": {
+      "type": "object",
+      "properties": {
+        "rid": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

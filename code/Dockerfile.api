@@ -1,0 +1,16 @@
+FROM node:12
+
+#ADD dist/package.json /tmp/package.json
+#RUN cd /tmp && npm install --production
+#RUN mkdir -p /opt/app && cp -a /tmp/node_modules /opt/app/
+
+WORKDIR /opt/app
+ADD dist/compose /opt/app/compose/
+ADD dist/db /opt/app/db/
+ADD dist/services /opt/app/services/
+ADD dist/shared /opt/app/shared/
+ADD dist/ui /opt/app/ui/
+ADD dist/package.json /opt/app/
+#ADD .env /opt/app/
+RUN cd /opt/app && npm install --production
+CMD ["node","compose/api.js"]

@@ -1,0 +1,50 @@
+{
+  "fingerprint": {
+    "body": {
+      "type": "object",
+      "required": ["useragent"],
+      "properties": {
+        "useragent": {
+          "type": "string"
+        }
+      }
+    },
+    "response": {
+      "201": {
+        "type": "string"
+      },
+      "401": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "message": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "500": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "message": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

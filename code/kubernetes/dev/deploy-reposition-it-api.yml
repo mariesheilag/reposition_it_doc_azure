@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ing-reposition-it-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ing-reposition-it-api
+  template:
+    metadata:
+      labels:
+        app: ing-reposition-it-api
+    spec:
+      containers:
+      - name: ing-reposition-it-api
+        image: #{acr.url}#/repositionitdev_api:#{Build.BuildId}#
+        ports:
+        - containerPort: 2000
+        env:
+          - name: NODE_ENV
+<<<<<<< HEAD
+            value: "development"
+=======
+            value: "production"
+>>>>>>> 77851c9d11b02a1b999dbf11e3a04f2caf144848
+          - name: PORT
+            value: "2000"
+          - name: HOST
+            value: "0.0.0.0"
+<<<<<<< HEAD
+          - name: "JWT_SYNC_SECRET"
+            value: 8934ijrdskoai90d8uwehby5tijf90dsw,384hujsdifdsf                    
+=======
+          - name: JWT_SYNC_SECRET
+            value: "8934ijrdskoai90d8uwehby5tijf90dsw,384hujsdifdsf"
+>>>>>>> 77851c9d11b02a1b999dbf11e3a04f2caf144848

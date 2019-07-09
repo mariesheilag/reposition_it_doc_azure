@@ -1,0 +1,31 @@
+steps:
+- task: Kubernetes@1
+  displayName: 'Deploy Application to Kubernetes'
+  inputs:
+    connectionType: 'Azure Resource Manager'
+    azureSubscriptionEndpoint: 'Reposition.IT(63564ee8-63ec-48fc-9ab2-dd90a624351b)'
+    azureResourceGroup: 'ing-reposition-it-dev-rg'
+    kubernetesCluster: 'ing-reposition-it-dev'
+    useClusterAdmin: true
+    namespace: 'reposition-it-dev'
+    command: apply
+    useConfigurationFile: true
+    configuration: '$(System.DefaultWorkingDirectory)/paloitsingapore.reposition-mvp/new/kubernetes/dev/'
+    azureSubscriptionEndpointForSecrets: 'Reposition.IT(63564ee8-63ec-48fc-9ab2-dd90a624351b)'
+    azureContainerRegistry: ingrepositiondev.azurecr.io
+    secretName: 'acr-auth'
+    versionSpec: 1.7.0
+
+
+#Your build pipeline references a secret variable named ‘STORAGE_ACCOUNT_KEY’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it secret. See https://go.microsoft.com/fwlink/?linkid=865972
+variables:
+  STORAGE_ACCOUNT_NAME: 'repositionitui'
+
+steps:
+- task: AzureCLI@1
+  displayName: 'Azure CLI '
+  inputs:
+    azureSubscription: 'Reposition.IT(63564ee8-63ec-48fc-9ab2-dd90a624351b)'
+    scriptLocation: inlineScript
+    inlineScript: 'az storage blob upload-batch --account-name $(STORAGE_ACCOUNT_NAME) --account-key $(STORAGE_ACCOUNT_KEY) --destination dev --source $(System.DefaultWorkingDirectory)/paloitsingapore.reposition-mvp/new/dist/ui/.next'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/paloitsingapore.reposition-mvp/new/dist/ui/.next'

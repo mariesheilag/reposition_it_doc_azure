@@ -1,0 +1,13 @@
+{
+  "name": "@repositionit/shared",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "fastify-swagger": "^2.4.0",
+    "ioredis": "^4.10.0",
+    "knex": "^0.17.5",
+    "knex-stringcase": "^1.2.3",
+    "lodash": "^4.17.11",
+    "pg": "^7.11.0"
+  }
+}

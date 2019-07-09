@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ing-reposition-it-ui
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ing-reposition-it-ui
+  template:
+    metadata:
+      labels:
+        app: ing-reposition-it-ui
+    spec:
+      containers:
+      - name: ing-reposition-it-ui
+        image: #{acr.url}#/repositionitdev_ui:#{Build.BuildId}#
+        ports:
+        - containerPort: 2001
+        env:
+          - name: NODE_ENV
+<<<<<<< HEAD
+            value: "development"
+=======
+            value: "production"
+>>>>>>> 77851c9d11b02a1b999dbf11e3a04f2caf144848
+          - name: UI_PORT
+            value: "2001"
+          - name: HOST
+            value: "0.0.0.0"
+          - name: API_URL
+            value: "http://104.215.182.14/"

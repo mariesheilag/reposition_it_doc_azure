@@ -1,0 +1,11 @@
+{
+  "name": "@repositionit-services/session",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "private": true,
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "jsonwebtoken": "^8.5.1",
+    "useragent": "^2.3.0"
+  }
+}

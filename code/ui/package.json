@@ -1,0 +1,14 @@
+{
+  "name": "@repositionit/ui",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "fastify-cookie": "^3.0.2",
+    "k-fastify-gateway": "^2.7.4",
+    "lru-cache": "^5.1.1",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}

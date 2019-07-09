@@ -1,0 +1,11 @@
+supplier,terminal_from,terminal_to,price_unit,quantity_twenty_original,quantity_twenty_current,quantity_forty_original,quantity_forty_current,whitelisted_clients,departure_date_start,departure_date_end,arrival_date_start,arrival_date_end,expiration_date,deleted_on
+Maersk,SSA T-30,Pacific Container Terminal,327,214,214,0,0,"Seaco,Textainer",2019-06-28,2019-07-09,2019-07-22,2019-07-24,2019-07-10,
+Maersk,Bukai,Pacific Container Terminal,327,214,214,0,0,"Seaco,Textainer",2019-06-28,2019-07-09,2019-07-20,2019-07-28,2019-07-10,
+Maersk,Bukai,Pacific Container Terminal,327,214,214,0,0,"Seaco,Textainer",2019-06-13,2019-06-18,2019-06-28,2019-07-03,2019-06-19,
+Maersk,Bukai,Pacific Container Terminal,327,214,214,0,0,"Seaco,Textainer",2019-06-20,2019-06-28,2019-07-07,2019-07-14,2019-06-29,
+Maersk,Bukai,Pacific Container Terminal,327,214,214,0,0,"Seaco,Textainer",2019-06-20,2019-07-11,2019-07-24,2019-07-27,2019-07-12,
+Maersk,Bukai,Pacific Container Terminal,327,214,214,0,0,"Seaco,Textainer",2019-06-25,2019-07-03,2019-07-13,2019-07-19,2019-07-04,
+Maersk,Bukai,Pacific Container Terminal,327,214,214,0,0,"Seaco,Textainer",2019-07-03,2019-07-05,2019-07-17,2019-07-19,2019-07-06,
+Maersk,Bukai,Pacific Container Terminal,327,214,214,0,0,"Seaco,Textainer",2019-07-05,2019-07-11,2019-07-19,2019-07-23,2019-07-12,
+Maersk,Bukai,Pacific Container Terminal,327,214,214,0,0,"Seaco,Textainer",2019-07-09,2019-07-13,2019-07-20,2019-07-28,2019-07-14,
+Maersk,Bukai,Pacific Container Terminal,327,214,214,0,0,"Seaco,Textainer",2019-07-15,2019-07-20,2019-07-31,2019-08-01,2019-07-21,

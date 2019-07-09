@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: reposition.it
+spec:
+  secretName: reposition.it
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  commonName: '*.reposition.it'
+  dnsNames:
+  - reposition.it
+  acme:
+    config:
+    - dns01:
+        provider: azure-dns
+        ingressClass: nginx
+      domains:
+      - '*.reposition.it'
+      - reposition.it

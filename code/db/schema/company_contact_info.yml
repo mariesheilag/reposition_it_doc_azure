@@ -1,0 +1,32 @@
+type: object
+properties:
+  email:
+    type: array
+    items:
+      - type: object
+        properties:
+          label:
+            type: string
+            min: 3
+            max: 255
+          email:
+            type: string
+            min: 3
+            max: 255
+  numbers:
+    type: array
+    items:
+      - type: object
+        properties:
+          label:
+            type: string
+            min: 3
+            max: 255
+          number:
+            type: string
+            min: 3
+            max: 255
+          type:
+            type: string
+            min: 3
+            max: 60

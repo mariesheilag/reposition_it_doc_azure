@@ -1,0 +1,77 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- chore/dockerize
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    cd shared && npm install
+    cd ../services/session && npm install
+    cd ../../ui && npm install
+    cd ../ && npm install
+    sh ci/build-dist.sh
+  displayName: 'npm install and build'
+
+
+- task: replacetokens@3
+  displayName: 'Replace Token'
+  inputs:
+    targetFiles: 'kubernetes/dev/*.yml'
+    encoding: 'auto'
+    writeBOM: true
+    actionOnMissing: 'warn'
+    keepToken: false
+    tokenPrefix: '#{'
+    tokenSuffix: '}#'
+
+- task: DockerCompose@0
+  displayName: 'Docker Build Images - UI and API'
+  inputs:
+    containerregistrytype: 'Azure Container Registry'
+    azureSubscription: 'Reposition.IT(63564ee8-63ec-48fc-9ab2-dd90a624351b)'
+    azureContainerRegistry: '{"loginServer":"ingrepositiondev.azurecr.io", "id" : "/subscriptions/63564ee8-63ec-48fc-9ab2-dd90a624351b/resourceGroups/ing-reposition-it-dev-rg/providers/Microsoft.ContainerRegistry/registries/ingrepositiondev"}'
+    dockerComposeFile: 'docker-compose.yml'
+    dockerComposeFileArgs: 'DOCKER_BUILD_SOURCE='
+    projectName: 'reposition-it-dev'
+    action: 'Build services'
+    additionalImageTags: '$(Build.BuildId)'
+    includeLatestTag: true
+
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Azure Container Registry'
+    azureSubscription: 'Reposition.IT(63564ee8-63ec-48fc-9ab2-dd90a624351b)'
+    azureContainerRegistry: '{"loginServer":"ingrepositiondev.azurecr.io", "id" : "/subscriptions/63564ee8-63ec-48fc-9ab2-dd90a624351b/resourceGroups/ing-reposition-it-dev-rg/providers/Microsoft.ContainerRegistry/registries/ingrepositiondev"}'
+    dockerComposeFile: 'docker-compose.yml'
+    dockerComposeFileArgs: 'DOCKER_BUILD_SOURCE='
+    projectName: 'reposition-it-dev'
+    action: 'Push services'
+    additionalImageTags: '$(Build.BuildId)'
+    includeLatestTag: true
+
+- task: CopyFiles@2
+  inputs:
+    Contents: |
+      kubernetes/**
+      docker-compose.yml
+      ci/*
+      dist/**
+      !dist/node_modules/**
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish pipeline artifact'
+  inputs:
+    artifactName: 'new'
+    targetPath: '$(Build.ArtifactStagingDirectory)'

@@ -1,0 +1,85 @@
+{
+  "response": {
+    "200": {
+      "type": "object",
+      "properties": {
+        "offer": {
+          "type": "object",
+          "$ref": "#/definitions/offer"
+        },
+        "requests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/request"
+          }
+        }
+      },
+      "definitions": {
+        "offer": {
+          "type": "object",
+          "properties": {
+            "rid": {
+              "type": "string"
+            },
+            "terminalFrom": {
+              "type": "string"
+            },
+            "terminalTo": {
+              "type": "string"
+            },
+            "priceUnit": {
+              "type": "number"
+            },
+            "quantityTwentyOriginal": {
+              "type": "number"
+            },
+            "quantityFortyOriginal": {
+              "type": "number"
+            },
+            "departureDateStart": {
+              "type": "string"
+            },
+            "departureDateEnd": {
+              "type": "string"
+            },
+            "arrivalDateStart": {
+              "type": "string"
+            },
+            "arrivalDateEnd": {
+              "type": "string"
+            }
+          }
+        },
+        "request": {
+          "type": "object",
+          "properties": {
+            "rid": {
+              "type": "string"
+            },
+            "fromType": {
+              "type": "string"
+            },
+            "fromId": {
+              "type": "string"
+            },
+            "toType": {
+              "type": "string"
+            },
+            "toId": {
+              "type": "string"
+            },
+            "equipmentType": {
+              "type": "string"
+            },
+            "departureDateStart": {
+              "type": "string"
+            },
+            "departureDateEnd": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

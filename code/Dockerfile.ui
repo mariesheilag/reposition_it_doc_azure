@@ -1,0 +1,28 @@
+FROM node:12
+
+#ADD dist/package.json /tmp/package.json
+#RUN cd /tmp && npm install --production
+#RUN mkdir -p /opt/app && cp -a /tmp/node_modules /opt/app/
+
+<<<<<<< HEAD
+WORKDIR /opt/app
+ADD dist/compose /opt/app/compose/
+ADD dist/db /opt/app/db/
+ADD dist/services /opt/app/services/
+ADD dist/shared /opt/app/shared/
+ADD dist/ui /opt/app/ui/
+ADD dist/package.json /opt/app/
+#ADD .env /opt/app/
+RUN cd /opt/app && npm install --production
+=======
+WORKDIR /opt/appui
+ADD dist/compose /opt/appui/compose/
+ADD dist/db /opt/appui/db/
+ADD dist/services /opt/appui/services/
+ADD dist/shared /opt/appui/shared/
+ADD dist/ui /opt/appui/ui/
+ADD dist/package.json /opt/appui/
+#ADD .env /opt/appui/
+RUN cd /opt/appui && npm install
+>>>>>>> 77851c9d11b02a1b999dbf11e3a04f2caf144848
+CMD ["node","compose/ui.js"]

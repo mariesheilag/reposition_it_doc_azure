@@ -1,0 +1,40 @@
+type: array
+items:
+  - type: object
+    properties:
+      address_1:
+        type: string
+        min: 10
+        max: 255
+      address_2:
+        type: string
+        min: 10
+        max: 255
+      building:
+        type: string
+        min: 10
+        max: 255
+      city:
+        type: string
+        min: 10
+        max: 255
+      country:
+        type: string
+        min: 10
+        max: 255
+      postcode:
+        type: string
+        min: 10
+        max: 255
+      mobile_phone:
+        type: string
+        min: 6
+        max: 24
+      office_phone:
+        type: string
+        min: 6
+        max: 24
+    required:
+      - address_1
+        country
+        mobile_phone
