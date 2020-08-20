@@ -4,7 +4,7 @@
   "main": "index.ts",
   "private": true,
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "jsonwebtoken": "^8.5.1",
     "useragent": "^2.3.0"
   }
